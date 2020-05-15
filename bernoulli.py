@@ -1,8 +1,10 @@
-from random import choice
+from random import random
 
-def bernoulli(binary_choice):
-    return choice(binary_choice)
+def bernoulli(p):
+    num = random()
 
-choices = [0,1]
+    if num < p:
+        return True
+    else:
+        return False
 
-print(bernoulli(choices))
