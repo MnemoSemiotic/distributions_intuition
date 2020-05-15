@@ -16,5 +16,22 @@ def get_binary(n_bits=8):
         bins_d[i] = dec_to_bin(i, n_bits)
     return bins_d
 
-for dec, binary in get_binary().items():
-    print(f'{dec}: {binary}')
+d = get_binary()
+
+
+def binomial_distr(binary_dict):
+    sum_ones = dict()
+
+    for _, v in binary_dict.items():
+        successes = sum(v)
+        if successes not in sum_ones:
+            sum_ones[successes] = 0
+        sum_ones[successes] += 1
+    
+    return sum_ones
+
+binomial_dict = binomial_distr(d)
+
+for k, v in binomial_dict.items():
+    print(f'{k}: {v}')
+    
