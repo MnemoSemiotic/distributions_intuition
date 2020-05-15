@@ -10,4 +10,11 @@ def dec_to_bin(dec, n_bits=8):
 
     return bin_list[::-1]
 
-print(dec_to_bin(255))
+def get_binary(n_bits=8):
+    bins_d = {}
+    for i in range(2**n_bits):
+        bins_d[i] = dec_to_bin(i, n_bits)
+    return bins_d
+
+for dec, binary in get_binary().items():
+    print(f'{dec}: {binary}')
