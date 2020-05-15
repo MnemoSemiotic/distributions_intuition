@@ -13,7 +13,7 @@ def combinations(n, k):
 def binomial_pmf(n, k, p=0.5):
     return combinations(n, k) * (p**k) * ((1 - p)**(n - k))
 
-# print(binomial_pmf(20, 5, 0.3))
+# print(binomial_pmf(15, 4, 0.7))
 
 def binomial_dict(n, p=0.5):
     d = {}
@@ -25,4 +25,5 @@ def binomial_dict(n, p=0.5):
 d = binomial_dict(20, 0.3)
 
 for k, v in d.items():
-    print(f'{k}: {"*" * int(v*160)}')
+    # print(f'{k}: {"*" * int(v*160)}')
+    print(f'{k}: {v}')
