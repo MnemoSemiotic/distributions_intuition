@@ -10,7 +10,19 @@ def combinations(n, k):
     return int(factorial(n) / (factorial(n-k) * factorial(k)))
 
 
-def binomial_pmf(n, k, p):
+def binomial_pmf(n, k, p=0.5):
     return combinations(n, k) * (p**k) * ((1 - p)**(n - k))
 
-print(binomial_pmf(20, 5, 0.3))
+# print(binomial_pmf(20, 5, 0.3))
+
+def binomial_dict(n, p=0.5):
+    d = {}
+    for k in range(0, n+1):
+        d[k] = binomial_pmf(n, k, p)
+
+    return d
+
+d = binomial_dict(20, 0.3)
+
+for k, v in d.items():
+    print(f'{k}: {"*" * int(v*160)}')
