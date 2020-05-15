@@ -20,15 +20,15 @@ d = get_binary()
 
 
 def binomial_distr(binary_dict):
-    sum_ones = dict()
+    binomial_dict = dict()
 
     for _, v in binary_dict.items():
         successes = sum(v)
-        if successes not in sum_ones:
-            sum_ones[successes] = 0
-        sum_ones[successes] += 1
+        if successes not in binomial_dict:
+            binomial_dict[successes] = 0
+        binomial_dict[successes] += 1
     
-    return sum_ones
+    return binomial_dict
 
 binomial_dict = binomial_distr(d)
 
