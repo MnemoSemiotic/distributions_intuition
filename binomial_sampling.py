@@ -22,7 +22,7 @@ def binary_sampling_dict(n_bits, num_samples=500):
 
     return d
 
-d = binary_sampling_dict(num_samples=500)
+d = binary_sampling_dict(12, num_samples=500)
 
 for k, v in d.items():
     print(f'{k}: {v}')
