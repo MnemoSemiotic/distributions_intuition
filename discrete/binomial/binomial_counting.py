@@ -1,4 +1,4 @@
-
+''' We can approach understanding Binomial through counting in binary '''
 
 def gen_8_bit_bin_with_fors():
     bin_lst = []

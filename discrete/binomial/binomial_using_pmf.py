@@ -1,4 +1,4 @@
-# probably of 5 successes in 20 trials, p=0.3
+''' We can explicitly describe the probabilities in a Binomial Distribution '''
 
 def factorial(n):
     prod = 1

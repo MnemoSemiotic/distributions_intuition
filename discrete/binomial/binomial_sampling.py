@@ -1,3 +1,5 @@
+''' We can generate a sample distribution, where the more random samples we take, the more closely it resembles a binomial distribution '''
+
 from random import choice
 
 def get_bit():
