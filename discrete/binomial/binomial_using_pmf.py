@@ -21,8 +21,10 @@ def binomial_dict(n, p=0.5):
     return d
 
 
-def get_num_circuits_to_meet_thresh(threshold):
+def get_num_circuits_to_meet_thresh(threshold): 
+     
     '''
+    from breakout 5 b from slides Stats 7-b
     returns the num_circuits in order to meet a given threshold
     '''
     
@@ -70,4 +72,4 @@ if __name__ == "__main__":
 
 
 
-print(get_num_circuits_to_meet_thresh(threshold=.99)) #-> n circuits
+    # print(get_num_circuits_to_meet_thresh(threshold=.99)) #-> n circuits
