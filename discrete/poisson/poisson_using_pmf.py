@@ -28,8 +28,9 @@ def poisson_pmf_dict(lmbda, low_k, high_k):
 
     return d    
 
-for k, v in poisson_pmf_dict(lmbda=10, low_k=0, high_k30).items():
-    print(f'{k}:{v}')
+for k, v in poisson_pmf_dict(lmbda=10, low_k=0, high_k=50).items():
+    # print(f'{k}: {"*" * int(v*250)}')
+    print(f'{k}: {int(v*250000)}')
 
 
 
