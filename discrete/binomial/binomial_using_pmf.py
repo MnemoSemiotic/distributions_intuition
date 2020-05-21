@@ -21,22 +21,25 @@ def binomial_dict(n, p=0.5):
     return d
 
 
-def get_num_circuits_to_meet_thresh(threshold): 
-     
-    '''
-    from breakout 5 b from slides Stats 7-b
-    returns the num_circuits in order to meet a given threshold
-    '''
-    
-    for num_circuit_paths in range(10000):
+'''
+from breakout 5 b from slides Stats 7-b
+returns the num_circuits in order to meet a given threshold
+'''
+def proba_of_circuit_performing(num_circuit_paths, prob_of_a_device_not_failing):
+    sum_ = 0
+    for i in range(1, num_circuit_paths+1):
+        sum_ += binomial_pmf(num_circuit_paths, i, (prob_of_a_device_not_failing))
+    return sum_
 
-        sum_ = 0
 
-        for i in range(1, num_circuit_paths+1):
-            sum_ += binomial_pmf(num_circuit_paths, i, (0.68))
-        
-            if sum_ > threshold:
-                return num_circuit_paths
+def get_num_circuits_to_meet_thresh(threshold, prob_of_a_device_not_failing=0.68): 
+
+    for num_circuit_paths in range(3, 10000):
+
+        prob_of_circuit_success = proba_of_circuit_performing(num_circuit_paths, prob_of_a_device_not_failing)
+
+        if prob_of_circuit_success > threshold:
+            return num_circuit_paths
 
 
 if __name__ == "__main__":
@@ -62,14 +65,13 @@ if __name__ == "__main__":
     # # print(binomial_pmf(100, 25, (1/3)))
 
     # breakout 5 a
-    print(binomial_pmf(3, 1, (0.68)))
+    # print(binomial_pmf(3, 1, (0.68)))
 
 
 
 
     # breakout 5 b
 
+    print(get_num_circuits_to_meet_thresh(threshold=.9999)) #-> n circuits
 
-
-
-    # print(get_num_circuits_to_meet_thresh(threshold=.99)) #-> n circuits
+    # print(proba_of_performing(9, 0.68))
