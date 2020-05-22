@@ -13,5 +13,16 @@ def geometric_cdf(p, k):
         proba_ += geometric_pmf(p, r)
     return proba_
 
-# print(geometric_pmf(0.32, 2))
 
+def geometric_pmf_dict(p, k):
+    d = dict()
+
+    for r in range(0, k+1):
+        d[r] = geometric_pmf(p, r)
+    
+    return d
+
+d = geometric_pmf_dict(p=0.5, k=7)
+
+for k, v in d.items():
+    print(f'{k}: {v}')
