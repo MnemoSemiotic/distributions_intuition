@@ -31,3 +31,19 @@ def geometric(p=0.5):
 
 # print(geometric(p=0.2))
 
+def geometric_samples_dict(p=0.05, num_samples=10000):
+    d = dict()
+
+    for _ in range(num_samples):
+        num_trials = geometric(p)
+        
+        if num_trials not in d:
+            d[num_trials] = 0
+        d[num_trials] += 1
+    
+    return d
+
+d = geometric_samples_dict(p=0.05, num_samples=10000)
+
+for k, v in d.items():
+    print(f'{k}: {v}')
