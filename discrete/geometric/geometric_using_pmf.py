@@ -22,7 +22,20 @@ def geometric_pmf_dict(p, k):
     
     return d
 
-d = geometric_pmf_dict(p=0.5, k=7)
+# d = geometric_pmf_dict(p=0.5, k=7)
 
-for k, v in d.items():
-    print(f'{k}: {v}')
+# for k, v in d.items():
+#     print(f'{k}: {v}')
+
+def geometric_cdf_dict(p, k):
+    d = dict()
+
+    for r in range(0, k+1):
+        d[r] = geometric_cdf_closed(p, r)
+
+    return d
+
+# d = geometric_cdf_dict(p=0.5, k=7)
+
+# for k, v in d.items():
+#     print(f'{k}: {v}')
