@@ -31,6 +31,7 @@ def geometric(p=0.5):
 
 # print(geometric(p=0.2))
 
+
 def geometric_samples_dict(p=0.05, num_samples=10000):
     d = dict()
 
@@ -43,7 +44,7 @@ def geometric_samples_dict(p=0.05, num_samples=10000):
     
     return d
 
-d = geometric_samples_dict(p=0.05, num_samples=10000)
+d = geometric_samples_dict(p=0.02, num_samples=10000)
 
-for k, v in d.items():
+for k, v in sorted(d.items()):
     print(f'{k}: {v}')
