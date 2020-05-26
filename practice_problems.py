@@ -143,25 +143,20 @@
 
 
 
-
-
-
-
-
 '''
 7. Suppose on average that there are 25 dust particles in a droplet of rain in a given region. What is the probability that there are 50 dust particles in 3 droplets of rain?
 '''
-def factorial(n):
-    prod = 1
-    for i in range(1, n+1):
-        prod *= i
-    return prod
+# def factorial(n):
+#     prod = 1
+#     for i in range(1, n+1):
+#         prod *= i
+#     return prod
 
-def poisson(lmbda, k):
-    from math import e
-    return e**(-lmbda) * lmbda**k / factorial(k)
+# def poisson(lmbda, k):
+#     from math import e
+#     return e**(-lmbda) * lmbda**k / factorial(k)
 
-print(poisson(25*3, 50))
+# print(poisson(25*3, 50))
 
 
 
@@ -174,9 +169,14 @@ print(poisson(25*3, 50))
 '''
 
 
+
+
+
 '''
 9. A canvasser is going door to door to collect donations. On average, 20% of people whose door the canvasser knocks on will give the requested donation of $20. On a given day, the canvasser will knock on 20 doors. What is the probability the canvasser will make at least $100?
 '''
+
+
 
 
 '''
@@ -188,7 +188,3 @@ print(poisson(25*3, 50))
 11. On average, a plumber fixes 7 broken pipes a day. What is the probability that the plumber will fix 15 pipes on a given day?
 '''
 
-
-'''
-12. 
-'''
