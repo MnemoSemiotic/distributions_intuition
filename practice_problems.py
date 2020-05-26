@@ -60,19 +60,36 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 '''
 3. You plan on flipping a coin 6 times. How many total outcomes of the 6 coin flips can you have with exactly 2 tails?
 '''
+# binary = [0, 1]
+
+# heads_2_list = []
+# for i in binary:
+#     for j in binary:
+#         for k in binary:
+#             for l in binary:
+#                 for m in binary:
+#                     for n in binary:
+#                         if [i,j,k,l,m,n].count(1) == 2:
+#                             heads_2_list.append([i,j,k,l,m,n])
+
+# for result in heads_2_list:
+#     print(result)
+
+# print(len(heads_2_list))
+
+
+from itertools import combinations
+
+
+
+
+
+
+
+
 
 
 '''
