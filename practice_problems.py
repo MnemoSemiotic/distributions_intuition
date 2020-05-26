@@ -86,30 +86,26 @@
 4. How many ways can you award an identical award to 3 of 11 people?
 '''
 
-outcome = [0,1]
-lst = []
-for i in outcome:
-    for j in outcome:
-        for k in outcome:
-            for l in outcome:
-                for m in outcome:
-                    for n in outcome:
-                        for o in outcome:
-                            for p in outcome:
-                                for q in outcome:
-                                    for r in outcome:
-                                        for s in outcome:
-                                            if [i,j,k,l,m,n,o,p,q,r,s].count(1)==3:
-                                                lst.append([i,j,k,l,m,n,o,p,q,r,s])
+# outcome = [0,1]
+# lst = []
+# for i in outcome:
+#     for j in outcome:
+#         for k in outcome:
+#             for l in outcome:
+#                 for m in outcome:
+#                     for n in outcome:
+#                         for o in outcome:
+#                             for p in outcome:
+#                                 for q in outcome:
+#                                     for r in outcome:
+#                                         for s in outcome:
+#                                             if [i,j,k,l,m,n,o,p,q,r,s].count(1)==3:
+#                                                 lst.append([i,j,k,l,m,n,o,p,q,r,s])
 
-for item in lst:
-    print(item)
+# for item in lst:
+#     print(item)
 
-print(len(lst))
-
-
-
-
+# print(len(lst))
 
 
 
@@ -117,14 +113,43 @@ print(len(lst))
 5. If the chance of winning the lottery is 1/100, and a person plays the lottery every day for 100 days, what is the probability of winning within those 100 days?
 '''
 
+# def geom_cdf_closed(p, k):
+#     return 1 - (1-p)**k
+
+# print(geom_cdf_closed(0.01, 100))
+
+
+# def geom_pmf(p, k):
+#     return p * (1-p)**(k-1)
+
+# def geom_cdf(p, k_high):
+#     proba_ = 0
+
+#     for k in range(1, k_high+1):
+#         proba_ += geom_pmf(p, k)
+#     return proba_
+
+# print(geom_cdf(0.01, 100))
+
+
+
+
+
 
 '''
-6. You will roll a 5-sided die 10 times. What is the probability that the sum of the dice will equal 25?
+6. You will roll a 5-sided die 10 times. What is the probability that the sum of the dice rolls will equal 25?
 '''
 
 
+
+
+
+
+
+
+
 '''
-7. Suppose on average that there are 25 dust particles in a droplet of rain in a given region. What is the probability that there 50 dust particles in 3 droplets of rain?
+7. Suppose on average that there are 25 dust particles in a droplet of rain in a given region. What is the probability that there are 50 dust particles in 3 droplets of rain?
 '''
 
 
