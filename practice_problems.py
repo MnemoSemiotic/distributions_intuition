@@ -151,6 +151,22 @@
 '''
 7. Suppose on average that there are 25 dust particles in a droplet of rain in a given region. What is the probability that there are 50 dust particles in 3 droplets of rain?
 '''
+def factorial(n):
+    prod = 1
+    for i in range(1, n+1):
+        prod *= i
+    return prod
+
+def poisson(lmbda, k):
+    from math import e
+    return e**(-lmbda) * lmbda**k / factorial(k)
+
+print(poisson(25*3, 50))
+
+
+
+
+
 
 
 '''
