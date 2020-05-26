@@ -44,7 +44,24 @@ def geometric_samples_dict(p=0.05, num_samples=10000):
     
     return d
 
-d = geometric_samples_dict(p=0.02, num_samples=10000)
+# d = geometric_samples_dict(p=0.02, num_samples=10000)
+
+# for k, v in sorted(d.items()):
+#     print(f'{k}: {v}')
+
+
+def geometric_samples_proba_dict(p=0.5, num_samples=10000):
+    d = geometric_samples_dict(p=p, num_samples=num_samples)
+    
+    new_d = dict()
+
+    for k, v in d.items():
+        new_d[k] = v / num_samples
+
+    return new_d
+
+
+d = geometric_samples_proba_dict(p=0.5, num_samples=100000)
 
 for k, v in sorted(d.items()):
     print(f'{k}: {v}')
