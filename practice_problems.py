@@ -81,24 +81,40 @@
 # print(len(heads_2_list))
 
 
-from itertools import combinations
-
-
-
-
-
-
-
-
-
 
 '''
 4. How many ways can you award an identical award to 3 of 11 people?
 '''
 
+outcome = [0,1]
+lst = []
+for i in outcome:
+    for j in outcome:
+        for k in outcome:
+            for l in outcome:
+                for m in outcome:
+                    for n in outcome:
+                        for o in outcome:
+                            for p in outcome:
+                                for q in outcome:
+                                    for r in outcome:
+                                        for s in outcome:
+                                            if [i,j,k,l,m,n,o,p,q,r,s].count(1)==3:
+                                                lst.append([i,j,k,l,m,n,o,p,q,r,s])
+
+for item in lst:
+    print(item)
+
+print(len(lst))
+
+
+
+
+
+
 
 '''
-5. If the chance of winning the lottery is 1/100, and a person plays the lottery every day for 100 days, what is the probability of winning?
+5. If the chance of winning the lottery is 1/100, and a person plays the lottery every day for 100 days, what is the probability of winning within those 100 days?
 '''
 
 
