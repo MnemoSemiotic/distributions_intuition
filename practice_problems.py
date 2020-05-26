@@ -1,11 +1,73 @@
 '''
-1. How many different ways can you rearrange the letters in the word "perpendicular"?
+1. How many different ways can you rearrange the letters in the word "prepare"?
 '''
 
+# word = list('prepare')
+
+# word_set = list(set(word))
+
+# words_lst = []
+
+# for i in word_set:
+#     for j in word_set:
+#         for k in word_set:
+#             for l in word_set:
+#                 for m in word_set:
+#                     for n in word_set:
+#                         for o in word_set:
+#                             potential = ''.join([i,j,k,l,m,n,o])
+#                             if sorted(potential) == sorted(word):
+#                                 if potential not in words_lst:
+#                                     words_lst.append(potential)
+
+# for word in words_lst:
+#     print(word)
+
+# print(len(words_lst))
+
+
+# # 'prepare'
+# # p*2
+# # e*2
+# # r*2
+
+# # 7!
+# # --------
+# # 2!*2!*2!
+
+
 
 '''
-2. Given two dice, what is the probability of rolling the same number of pips on both dice?
+2. Given two 6-sided dice, what is the probability of rolling the same number of pips on both dice?
 '''
+
+# dice_roll = [1,2,3,4,5,6]
+# possibilities = []
+
+# for roll1 in dice_roll:
+#     for roll2 in dice_roll:
+#         possibilities.append([roll1, roll2])
+
+# # for roll in possibilities:
+# #     print(roll)
+
+# identicals =  []
+# for lst in possibilities:
+#     if lst[0] == lst[1]:
+#         identicals.append(lst)
+
+# print(len(identicals) / len(possibilities))
+
+
+
+
+
+
+
+
+
+
+
 
 
 '''
