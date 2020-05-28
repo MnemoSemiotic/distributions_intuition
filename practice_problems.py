@@ -139,8 +139,37 @@
 '''
 6. You will roll a 5-sided die 10 times. What is the probability that the sum of the dice rolls will equal 25?
 '''
+# outcomes = [1,2,3,4,5]
+
+# def dec_to_base_5(dec, n_quints=10):
+#     quint_list = []
+#     x = dec
+
+#     for _ in range(n_quints):
+#         quint = x % 5
+#         quint_list.append(quint)
+#         x //= 5
+
+#     return quint_list[::-1]
+
+# def get_base_5(n_quints=10):
+#     quints_distr = {}
+#     for i in range(5**n_quints):
+#         quints = dec_to_base_5(i, n_quints)
+#         sum_ = sum(quints)
+#         if sum_ not in quints_distr:
+#             quints_distr[sum_] = 0
+#         quints_distr[sum_] += 1
+#     return quints_distr
 
 
+# quints_distr = get_base_5(10)
+# for k, v in quints_distr.items():
+#     print(f'{k}: {v}')
+
+# print(f'probability of summing to 25: {quints_distr[25] / sum(quints_distr.values())}')
+
+# # probability of summing to 25: 0.0485062656
 
 
 '''
@@ -168,23 +197,61 @@
 8. Suppose a circuit is designed with 20 redundant components, of which 7 must be functioning for the circuit to perform as expected. At any given time, there is a 0.05 probability that one of the components will have failed. What is the probability that, at any given time, the circuit is functioning?
 '''
 
+def factorial(n):
+    prod = 1
+    for num in range(1, n+1):
+        prod *= num
+    return prod
+
+def combinations(n, k):
+    return int(factorial(n) / (factorial(n-k) * factorial(k)))
 
 
+def binomial_pmf(n, k, p=0.5):
+    return combinations(n, k) * (p**k) * ((1 - p)**(n - k))
+
+# gte7 = 0
+# for i in range(7, 20+1):
+#     gte7 += binomial_pmf(20, i, p=0.95)
+# print(gte7)
+
+# # ~1.0, or 0.999...
 
 
 '''
 9. A canvasser is going door to door to collect donations. On average, 20% of people whose door the canvasser knocks on will give the requested donation of $20. On a given day, the canvasser will knock on 20 doors. What is the probability the canvasser will make at least $100?
 '''
+# p = 0.2
+# k = int(100/20)
 
+# gtek = 0
+# for i in range(0, k):
+#     gtek += binomial_pmf(20, i, p=p)
+# print(1 - gtek)
+
+# # ~0.370
 
 
 
 '''
 10. A door to door salesperson is selling really nice vacuums. One in 20 people will buy this vacuum. Each house visited takes about 30 minutes. The goal is to sell 1 vacuum a day. What is the probability of a vacuum being sold in under 8 hours?
 '''
+# p = 1/10
+# k = 1
+# n = 16
 
+# print(binomial_pmf(n, k, p))
+
+# # # ~0.329
 
 '''
-11. On average, a plumber fixes 7 broken pipes a day. What is the probability that the plumber will fix 15 pipes on a given day?
+11. On average, a plumber fixes 7 broken pipes a day. What is the probability that the plumber will fix 15 broken pipes on a given day?
 '''
 
+# from math import e
+# def poisson_pmf(lmbda, k):
+#     return (lmbda**k * e**(-lmbda)) / factorial(k)
+
+# print(poisson_pmf(7, 15))
+
+# # ~0.0033
