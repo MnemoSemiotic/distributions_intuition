@@ -236,13 +236,14 @@ def binomial_pmf(n, k, p=0.5):
 '''
 10. A door to door salesperson is selling really nice vacuums. One in 20 people will buy this vacuum. Each house visited takes about 30 minutes. The goal is to sell 1 vacuum a day. What is the probability of a vacuum being sold in under 8 hours?
 '''
-# p = 1/10
-# k = 1
-# n = 16
+p = 1/10
+k = 16
+n = 16
 
-# print(binomial_pmf(n, k, p))
 
-# # # ~0.329
+print(binomial_pmf(n, k, p))
+
+# # ~0.329
 
 '''
 11. On average, a plumber fixes 7 broken pipes a day. What is the probability that the plumber will fix 15 broken pipes on a given day?
