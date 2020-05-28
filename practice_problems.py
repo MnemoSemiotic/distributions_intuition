@@ -139,37 +139,39 @@
 '''
 6. You will roll a 5-sided die 10 times. What is the probability that the sum of the dice rolls will equal 25?
 '''
-# outcomes = [1,2,3,4,5]
+outcomes = [1,2,3,4,5]
 
-# def dec_to_base_5(dec, n_quints=10):
-#     quint_list = []
-#     x = dec
+def dec_to_base_5(dec, n_quints=10):
+    quint_list = []
+    x = dec
 
-#     for _ in range(n_quints):
-#         quint = x % 5
-#         quint_list.append(quint)
-#         x //= 5
+    for _ in range(n_quints):
+        quint = x % 5
+        quint_list.append(quint)
+        x //= 5
 
-#     return quint_list[::-1]
+    quint_list = [x+1 for x in quint_list]
+    # print(quint_list[::-1])
+    return quint_list[::-1]
 
-# def get_base_5(n_quints=10):
-#     quints_distr = {}
-#     for i in range(5**n_quints):
-#         quints = dec_to_base_5(i, n_quints)
-#         sum_ = sum(quints)
-#         if sum_ not in quints_distr:
-#             quints_distr[sum_] = 0
-#         quints_distr[sum_] += 1
-#     return quints_distr
+def get_base_5(n_quints=10):
+    quints_distr = {}
+    for i in range(5**n_quints):
+        quints = dec_to_base_5(i, n_quints)
+        sum_ = sum(quints)
+        if sum_ not in quints_distr:
+            quints_distr[sum_] = 0
+        quints_distr[sum_] += 1
+    return quints_distr
 
 
-# quints_distr = get_base_5(10)
-# for k, v in quints_distr.items():
-#     print(f'{k}: {v}')
+quints_distr = get_base_5(10)
+for k, v in quints_distr.items():
+    print(f'{k}: {v}')
 
-# print(f'probability of summing to 25: {quints_distr[25] / sum(quints_distr.values())}')
+print(f'probability of summing to 25: {quints_distr[25] / sum(quints_distr.values())}')
 
-# # probability of summing to 25: 0.0485062656
+# probability of summing to 25: 0.0485062656
 
 
 '''
