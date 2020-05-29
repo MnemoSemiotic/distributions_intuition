@@ -28,11 +28,24 @@ def poisson_pmf_dict(lmbda, low_k, high_k):
 
     return d    
 
-for k, v in poisson_pmf_dict(lmbda=10, low_k=0, high_k=50).items():
-    # print(f'{k}: {"*" * int(v*250)}')
-    print(f'{k}: {int(v*250000)}')
+# for k, v in poisson_pmf_dict(lmbda=10, low_k=0, high_k=50).items():
+#     # print(f'{k}: {"*" * int(v*250)}')
+#     print(f'{k}: {int(v*250000)}')
 
 
 
 # ''' you expect 5 people to visit your store with 10 minutes, what is the probability that 10 people visit your store in 20 minutes? lmbda = 10'''
 # print(poisson_pmf(10, 10))
+
+
+'''
+Lect 8
+Breakout 1
+'''
+'a'
+# lmbda = 6
+# k = 10
+'b'
+lmbda = 3/4
+k = 0
+print(poisson_pmf(lmbda, k))
