@@ -16,3 +16,13 @@ def exponential_expectation(lmbda):
 
 def exponential_variance(lmbda):
     return 1 / lmbda**2
+
+
+# print(1 - exponential_cdf(0.1, 10))
+
+# print(exponential_expectation(0.1))
+
+# print(exponential_variance(0.1)**(1/2))
+
+# for time in range(0,20+1):
+#     print(f'{time}: {exponential_cdf(0.1, time)}')
